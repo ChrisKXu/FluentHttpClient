@@ -2,9 +2,7 @@ init:
   - git config --global core.autocrlf true
 install:
   - ps: scripts\envsetup.ps1
-configuration:
-  - Debug
-  - Release
+version: 0.1.{build}
 clone_depth: 1
 test: off
 deploy: off
