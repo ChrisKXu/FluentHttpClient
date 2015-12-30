@@ -1,5 +1,9 @@
 {
-    "projects": [
-        "FluentHttpClient"
-    ]
+  "projects": [
+    "FluentHttpClient"
+  ],
+  "sdk": {
+    "runtime": "coreclr",
+    "architecture": "x86"
+  }
 }
