@@ -8,8 +8,12 @@ nuget:
   disable_publish_on_pr: true
 build:
   verbosity: normal
-environment:
-  DNX_BUILD_VERSION: $(appveyor_build_version)
+assembly_info:
+  patch: true
+  file: **\AssemblyInfo.cs
+  assembly_version: '{version}'
+  assembly_file_version: '{version}'
+  assembly_informational_version: '{version}-alpha1'
 configuration:
   - Debug
   - Release

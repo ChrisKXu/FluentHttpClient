@@ -1,5 +1,5 @@
 {
-    "version": "*-alpha",
+    "version": "0.1.0-*",
     "description": "A HttpClient library in C#",
     "authors": [ "Christopher Xu" ],
     "tags": [ "" ],
