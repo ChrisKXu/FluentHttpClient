@@ -18,7 +18,7 @@ artifacts:
   name: myget
 deploy:
 - provider: NuGet
-  server: https://www.myget.org/feed/Packages/chriskxu
+  server: https://www.myget.org/F/chriskxu/api/v2/package
   api_key:
     secure: 2eXAuI3EbjRxVMoS/hLPu2W6gRROBj5UaSQkmcU/tUel8Gt1TuHtRMdTWSeeK3Wj
   skip_symbols: true
