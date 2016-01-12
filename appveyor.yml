@@ -21,5 +21,5 @@ deploy:
   server: https://www.myget.org/feed/Packages/chriskxu
   api_key:
     secure: 2eXAuI3EbjRxVMoS/hLPu2W6gRROBj5UaSQkmcU/tUel8Gt1TuHtRMdTWSeeK3Wj
-  artifact: myget
+  skip_symbols: true
 test: off
