@@ -10,18 +10,15 @@ namespace FluentHttpClient
     {
         internal HttpMessageInvoker HttpClient { get; set; }
 
+        internal FluentHttpClientHandler HttpHandler { get; set; }
+
         /// <summary>
         /// Default contructor, takes no arguments
         /// </summary>
         public FluentHttpClient()
-            : this(new HttpClient())
         {
-        }
-
-        internal FluentHttpClient(HttpMessageInvoker httpClient)
-        {
-            // internal constructor for test purposes
-            HttpClient = httpClient;
+            this.HttpHandler = new FluentHttpClientHandler();
+            this.HttpClient = new HttpClient(HttpHandler, false); // nope, we will dispose the handler ourselves
         }
 
         public FluentHttpRequest CreateHttpRequest()
@@ -31,7 +28,8 @@ namespace FluentHttpClient
         
         public void Dispose()
         {
-            HttpClient?.Dispose();
+            this.HttpClient?.Dispose();
+            this.HttpHandler?.Dispose();
         }
     }
 }
