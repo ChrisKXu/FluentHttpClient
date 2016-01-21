@@ -6,30 +6,29 @@ using System.Threading.Tasks;
 
 namespace FluentHttpClient
 {
-    public class FluentHttpClient : IDisposable
+    /// <summary>
+    /// This class acts like a factory for FluentHttpRequest
+    /// </summary>
+    public class FluentHttpClient
     {
-        internal HttpMessageInvoker HttpClient { get; set; }
-
-        internal FluentHttpClientHandler HttpHandler { get; set; }
-
         /// <summary>
         /// Default contructor, takes no arguments
         /// </summary>
         public FluentHttpClient()
         {
-            this.HttpHandler = new FluentHttpClientHandler();
-            this.HttpClient = new HttpClient(HttpHandler, false); // nope, we will dispose the handler ourselves
+
         }
 
+        /// <summary>
+        /// Creates a FluentHttpRequest object to send http requests
+        /// </summary>
+        /// <returns></returns>
         public FluentHttpRequest CreateHttpRequest()
         {
-            return new FluentHttpRequest(this);
-        }
-        
-        public void Dispose()
-        {
-            this.HttpClient?.Dispose();
-            this.HttpHandler?.Dispose();
+            return new FluentHttpRequest(this)
+            {
+                HttpHandler = new FluentHttpClientHandler()
+            };
         }
     }
 }

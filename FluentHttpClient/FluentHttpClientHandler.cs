@@ -7,11 +7,14 @@ using System.Threading.Tasks;
 
 namespace FluentHttpClient
 {
+    /// <summary>
+    /// This class will handle logic that is not handled in HttpClientHandler
+    /// </summary>
     internal class FluentHttpClientHandler : HttpClientHandler
     {
         protected override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            return base.SendAsync(request, cancellationToken);
         }
     }
 }
