@@ -1,5 +1,6 @@
 {
   "projects": [
-    "FluentHttpClient"
+    "FluentHttpClient",
+    "FluentHttpClient.UnitTests"
   ]
 }

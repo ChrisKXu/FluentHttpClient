@@ -8,22 +8,16 @@
     "tooling": {
         "defaultNamespace": "FluentHttpClient"
     },
-
+    "dependencies": {
+        "Microsoft.CSharp": "4.0.1-beta-23516",
+        "System.Collections": "4.0.11-beta-23516",
+        "System.Linq": "4.0.1-beta-23516",
+        "System.Net.Http": "4.0.0-beta-23019",
+        "System.Runtime": "4.0.21-beta-23516",
+        "System.Threading": "4.0.11-beta-23516"
+    },
     "frameworks": {
-        "net451": {
-            "dependencies": {
-                "System.Net.Http": "4.0.0-beta-23019"
-            }
-        },
-        "dotnet5.4": {
-            "dependencies": {
-                "Microsoft.CSharp": "4.0.1-beta-23516",
-                "System.Collections": "4.0.11-beta-23516",
-                "System.Linq": "4.0.1-beta-23516",
-                "System.Net.Http": "4.0.0-beta-23019",
-                "System.Runtime": "4.0.21-beta-23516",
-                "System.Threading": "4.0.11-beta-23516"
-            }
-        }
+        "dnx451": { },
+        "dnxcore50": { }
     }
 }

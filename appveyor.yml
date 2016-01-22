@@ -23,4 +23,6 @@ deploy:
     secure: 2eXAuI3EbjRxVMoS/hLPu2W6gRROBj5UaSQkmcU/tUel8Gt1TuHtRMdTWSeeK3Wj
   skip_symbols: true
   artifact: /.*\.nupkg/
-test: off
+test:
+  assemblies:
+    - 'artifacts\bin\**\*.UnitTests.dll'
