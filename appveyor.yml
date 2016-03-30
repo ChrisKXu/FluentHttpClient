@@ -1,20 +1,20 @@
 init:
   - git config --global core.autocrlf true
-install:
-  - ps: scripts\envsetup.ps1
+os: Visual Studio 2015
+build_script:
+  - ps: scripts\build.ps1
 version: 0.1.{build}
+cache:
+  - '%UserProfile%\.dnx'
 clone_depth: 1
 nuget:
   disable_publish_on_pr: true
-build:
-  verbosity: normal
 environment:
   DNX_BUILD_VERSION: $(APPVEYOR_BUILD_NUMBER)
 configuration:
-  - Debug
   - Release
 artifacts:
-- path: 'artifacts\bin\**\Release\*.nupkg'
+- path: 'artifacts\Release\*.nupkg'
   name: myget
 deploy:
 - provider: NuGet
@@ -23,6 +23,4 @@ deploy:
     secure: 2eXAuI3EbjRxVMoS/hLPu2W6gRROBj5UaSQkmcU/tUel8Gt1TuHtRMdTWSeeK3Wj
   skip_symbols: true
   artifact: /.*\.nupkg/
-test:
-  assemblies:
-    - 'artifacts\bin\**\*.UnitTests.dll'
+test: off
